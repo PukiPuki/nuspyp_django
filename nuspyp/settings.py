@@ -74,12 +74,16 @@ WSGI_APPLICATION = 'nuspyp.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    'default' : {
+        'ENGINE' : 'django_mongodb_engine',
+        'NAME' : 'my_database',
+        ...
+        'OPTIONS' : {
+            'socketTimeoutMS' : 500,
+            ...
+        }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
