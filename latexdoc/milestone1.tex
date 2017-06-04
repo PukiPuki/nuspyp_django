@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\author{Wong Ding Feng \and Derrick Chua}
+\title{Magic Paper}
+\begin{document}
+\maketitle
+\section{Level of Achievement}
+Gemini
+\section{Project Scope}
+A portal for crowdsourced Past Year Paper solutions
+\section{Problem Motivation}
+We realised the lack of past year paper solutions for some courses in NUS\@. When we come up with some solutions for past year papers, it would be nice to be able to check against other people's solutions.
+\section{Detailed description}
+\subsection{Method to sieve out correct answer}
+We have no idea which method would work. These are a few that we had come up with.
+\subsubsection{Reddit style of upvote}
+Upvotes pull it up.Add some time based weight to pull it down. This is to allow for possibly newer better answers.
+\subsubsection{Similarity comparison through NLTK}
+Great minds think alike, thats the idea behind this.
+Using python NLTK or other machine learning methods, possibly doing word count to find similarity in sentences. Then this could possibly be a correct answer.
+\subsection{Rebuttal methods}
+There are some questions that trick the majority into getting the wrong answer, to allow for the few to submit meaningful corrections to the majority's answer. 
+\subsection{Tagging and Indexing}
+Information is useful becaused it is indexed, try to create some auto indexing algorithms.
+\section{Technologies and tools}
+\begin{itemize}
+    \item Backend
+    \begin{itemize}
+        \item Node.js
+            \begin{itemize}
+                \item Passport.js
+            \end{itemize}
+        \item Express
+        \item NLTK
+     \end{itemize}
+\item Frontend
+    \begin{itemize}
+        \item React
+    \end{itemize}
+\end{itemize}
+
+\section{Development Plan}
+\begin{tabular}[pos]{| l | l |}
+    \hline
+    Parse past year papers using OCR (otherwise manual) & June week 1 \\
+    \hline
+    Create forum & June week 2  \\
+    \hline
+    Sieve our answer & June week 3 \& 4 \\
+    \hline
+    Crypto-currency & July \\
+    \hline
+\end{tabular}
+
+\end{document}
