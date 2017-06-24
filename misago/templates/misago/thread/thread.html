@@ -16,7 +16,7 @@
 
 {% block og-description %}
   {% blocktrans trimmed with starter=thread.starter_name started_on=thread.started_on|date category=category.name %}
-    Started by {{ starter }} on {{ started_on }} in the {{ category }} category.
+    Started by god, {{ starter }} on {{ started_on }} in the {{ category }} category.
   {% endblocktrans %} {% blocktrans trimmed count replies=thread.replies with last_post_on=thread.last_post_on|date %}
     {{ replies }} reply, last one from {{ last_post_on }}.
   {% plural %}
