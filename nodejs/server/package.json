@@ -8,7 +8,10 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "express": "^4.15.3"
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.15.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "scripts": {
     "start:server": "rm -rf ./build && webpack --config webpack.config.server.js"

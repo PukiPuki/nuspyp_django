@@ -20,7 +20,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b9bbcf77803d97a50160"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3d0a5d9ce24dd9d49e37"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -665,10 +665,30 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(0)(__webpack_require__.s = 0);
+/******/ 	return hotCreateRequire(1)(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./common/App.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+var App = function App() {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    ' Hello from react! '
+  );
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (App);
+
+/***/ }),
 
 /***/ "./node_modules/webpack/hot/log-apply-result.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -786,7 +806,7 @@ var a = 69;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_http__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_http__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_http__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__server__ = __webpack_require__("./server/server.js");
 
@@ -809,24 +829,47 @@ if (true) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_index__ = __webpack_require__("./server/auth/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_dom_server__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_dom_server___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_dom_server__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_App__ = __webpack_require__("./common/App.js");
+
+
+
+
 
 
 
 var app = __WEBPACK_IMPORTED_MODULE_0_express___default.a();
 
 app.get('/api', function (req, res) {
-  res.send({
-    message: __WEBPACK_IMPORTED_MODULE_1__auth_index__["a" /* default */]
-  });
+    res.send({
+        message: __WEBPACK_IMPORTED_MODULE_1__auth_index__["a" /* default */]
+    });
 });
+
+app.get('*', function (req, res) {
+    var application = __WEBPACK_IMPORTED_MODULE_3_react_dom_server__["renderToString"](__WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__common_App__["a" /* default */], null));
+    var html = '<!doctype html>\n    <html class="no-js" lang="">\n        <head>\n            <meta charset="utf-8">\n            <meta http-equiv="x-ua-compatible" content="ie=edge">\n            <title>HMR all the things!</title>\n            <meta name="description" content="">\n            <meta name="viewport"\n            content="width=device-width,  initial-scale=1">\n        </head>\n        <body>\n            <div id="root">' + application + '</div>\n        </body>\n    </html>';
+    res.send(html);
+});
+
 /* harmony default export */ __webpack_exports__["default"] = (app);
 
 /***/ }),
 
 /***/ 0:
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__("./node_modules/webpack/hot/poll.js?1000");
@@ -835,17 +878,24 @@ module.exports = __webpack_require__("./server/index.js");
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /***/ (function(module, exports) {
 
 module.exports = require("http");
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports) {
 
 module.exports = require("express");
+
+/***/ }),
+
+/***/ 4:
+/***/ (function(module, exports) {
+
+module.exports = require("react-dom/server");
 
 /***/ })
 
