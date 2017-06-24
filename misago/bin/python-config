@@ -1,4 +1,4 @@
-#!/home/dced/Projects/nuspyp_django/bin/python
+#!/home/df/projects/nuspyp_django/misago/bin/python
 
 import sys
 import getopt
